@@ -11,19 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022111356) do
+ActiveRecord::Schema.define(version: 20141024134602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "request_objects", force: true do |t|
-    t.integer  "clock"
-    t.string   "class_name"
-    t.integer  "instance_id"
+  create_table "firms", force: true do |t|
+    t.string   "name"
+    t.integer  "step",       limit: 8
+    t.integer  "stock",      limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "request_objects", ["clock"], name: "index_request_objects_on_clock", using: :btree
+  add_index "firms", ["name"], name: "index_firms_on_name", unique: true, using: :btree
+
+  create_table "request_objects", force: true do |t|
+    t.integer  "cycle",       limit: 8
+    t.string   "class_name"
+    t.integer  "instance_id", limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "request_objects", ["cycle"], name: "index_request_objects_on_cycle", using: :btree
 
 end
