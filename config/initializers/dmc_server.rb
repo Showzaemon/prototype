@@ -1,3 +1,3 @@
-#require "dmc_server"
+require "dmc_server"
 
-#DelayedMethodCaller.instance.start
+DelayedMethodCaller.instance.start

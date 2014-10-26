@@ -1,12 +1,12 @@
 require 'singleton'
 
 # Parameters 
-DMC_INTERVAL = 2  # Interval time by second
+DMC_INTERVAL = 4  # Interval time by second
 
 class DelayedMethodCaller
   include Singleton
   
-  attr_reader :cycle
+  attr_reader :interval, :cycle
 
   def initialize()
     @interval = DMC_INTERVAL     # cycle length by second.
@@ -64,5 +64,9 @@ class DelayedMethodCaller
   def stop()
     @started = false
     @dmct.join
-  end 
+  end
+
+  def started?()
+    return @started
+  end
 end

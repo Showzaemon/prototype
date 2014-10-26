@@ -1,0 +1,33 @@
+<div class="center hero-unit consol">
+	<h1>DMC Console</h1>
+	<ul class="list-group">
+	  <li class="list-group-item">
+	    Status		<span class="badge">
+	    							<%= DelayedMethodCaller.instance.started? ? 'Running' : 'Stop' %>
+	    					</span>
+	  </li>
+	  <li class="list-group-item">
+	    Cycle time<span class="badge"><%= DelayedMethodCaller.instance.interval%> sec</span>
+	  </li>
+	  <li class="list-group-item">
+	    Cycle count<span class="badge"><%= DelayedMethodCaller.instance.cycle %> cyc</span>
+	  </li>
+	  <li class="list-group-item">
+	    Refreshed	<span class="badge"><%= Time.new.strftime("%d %b %X %Z %Y") %></span>
+	  </li>
+	</ul>
+
+	<form id="change" action="change"/>
+	<div class="btn-toolbar" role="toolbar">
+		<div class="btn-group">
+		  <button type="submit" name="start" id="start" form="change"
+		  	class="btn btn-default"><span class="glyphicon glyphicon-play"/>&nbsp;Start</button>
+		  <button type="submit" name="stop"  id="stop" form="change"
+		  	class="btn btn-default"><span class="glyphicon glyphicon-stop"/>&nbsp;Stop</button>
+		</div>
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default"
+		   onClick="document.location.reload(true);"><span class="glyphicon glyphicon-refresh"/>&nbsp;Refresh</button>
+		</div>
+	</div>
+</div>

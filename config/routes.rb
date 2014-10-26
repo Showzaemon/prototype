@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :firms
+  match 'dmc_console/', to: 'dmc_console#show', via: 'get'
+  match 'dmc_console/show', to: 'dmc_console#show', via: 'get'
+  match 'dmc_console/change', to: 'dmc_console#change', via: 'get'
 
-  get 'request_objects/new'
+# resources :firms
+
+#deleting  get 'request_objects/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

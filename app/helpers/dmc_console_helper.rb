@@ -1,0 +1,2 @@
+module DmcConsoleHelper
+end

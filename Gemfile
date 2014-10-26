@@ -6,6 +6,8 @@ ruby '2.1.3'
 gem 'rails', '4.1.6'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'sprockets', '2.11.0'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'autoprefixer-rails', '~> 3.1.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '0.17.1'
 gem 'rails-bigint-pk', '1.1.0'
